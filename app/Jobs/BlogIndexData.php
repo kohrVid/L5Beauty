@@ -14,7 +14,6 @@ use Illuminate\Contracts\Bus\SelfHandling;
 
 class BlogIndexData extends Job implements SelfHandling
 {
-	#   use InteractsWithQueue, SerializesModels;
 	protected $tag;
 
     /**

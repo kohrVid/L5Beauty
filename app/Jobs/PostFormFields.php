@@ -14,7 +14,6 @@ use Illuminate\Contracts\Bus\SelfHandling;
 
 class PostFormFields extends Job implements SelfHandling
 {
-	//   use InteractsWithQueue, SerializesModels;
 	protected $id;
 
 	/*
@@ -25,7 +24,7 @@ class PostFormFields extends Job implements SelfHandling
 		"subtitle" => "",
 		"page_image" => "",
 		"content" => "",
-		"meta-description" => "",
+		"meta_description" => "",
 		"is_draft" => "0",
 		"publish_date" => "",
 		"publish_time" => "",
@@ -85,8 +84,11 @@ class PostFormFields extends Job implements SelfHandling
 
 		 $fields = ["id" => $id];
 		 foreach ($fieldNames as $field) {
-			 $fields["tags"] = $post->tags()->lists("tag")->all();
+			 $fields[$field] = $post->{$field};
 		 }
+
+		 $fields["tags"] = $post->tags()->lists("tag")->all();
+
 		 return $fields;
 	 }
 }

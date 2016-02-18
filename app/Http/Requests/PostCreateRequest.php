@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests;
 
-use App\Http\Requests\Request;
+use Carbon\Carbon;
 
 class PostCreateRequest extends Request
 {
@@ -28,7 +28,7 @@ class PostCreateRequest extends Request
 			 "subtitle" => "required",
 			 "content" => "required",
 			 "publish_date" => "required",
-			 "published_time" => "required",
+			 "publish_time" => "required",
 			 "layout" => "required",
 		 ];
 	 }
